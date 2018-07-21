@@ -1,0 +1,13 @@
+{
+  "name": "asytech-circuit-breaker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "@bennadel/circuit-breaker": "0.0.1",
+    "uuid": "3.3.2"
+  },
+  "devDependencies": {
+    "standard": "11.0.1"
+  }
+}

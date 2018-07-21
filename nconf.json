@@ -1,0 +1,9 @@
+{
+  "APP_RABBITMQ_HOST": "rabbitmq.internal.snapbook.io",
+  "APP_RABBITMQ_USER": "infra",
+  "APP_RABBITMQ_PASS": "5B7FA6D23E834EB3B7289CEEB016575F",
+  "APP_POSTGRES_HOST": "postgres.internal.snapbook.io",
+  "APP_POSTGRES_USER": "infra",
+  "APP_POSTGRES_PASS": "5B7FA6D23E834EB3B7289CEEB016575F",
+  "APP_MONGOLAB_URI": "mongodb://www:pass4www@ds061354.mlab.com:61354/snapbook-prod"
+}
