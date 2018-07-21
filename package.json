@@ -7,12 +7,23 @@
   },
   "dependencies": {
     "@bennadel/circuit-breaker": "0.0.1",
-    "uuid": "3.3.2"
+    "boom": "7.2.0",
+    "glob": "7.1.2",
+    "glob-promise": "3.4.0",
+    "hapi": "17.5.2",
+    "nconf": "0.10.0",
+    "rabbot": "2.1.0",
+    "rabbus": "0.8.2",
+    "uuid": "3.3.2",
+    "winston": "3.0.0"
   },
   "devDependencies": {
     "standard": "11.0.1"
   },
   "standard": {
-    "ignore": ["examples", "tasks"]
+    "ignore": [
+      "examples",
+      "tasks"
+    ]
   }
 }
