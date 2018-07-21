@@ -13,3 +13,5 @@ pids
 *.pid
 *.seed
 *.idea
+
+nconf.json
