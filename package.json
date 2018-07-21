@@ -1,13 +1,18 @@
 {
-  "name": "asytech-circuit-breaker",
+  "name": "Godzilla",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "./tasks/test.sh"
+  },
   "dependencies": {
     "@bennadel/circuit-breaker": "0.0.1",
     "uuid": "3.3.2"
   },
   "devDependencies": {
     "standard": "11.0.1"
+  },
+  "standard": {
+    "ignore": ["examples", "tasks"]
   }
 }
