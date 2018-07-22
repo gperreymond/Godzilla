@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-NODE_ENV=test
+export NODE_ENV=test
 echo "Environment: $NODE_ENV"
 
 rm -rf coverage/unit
