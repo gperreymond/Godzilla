@@ -9,21 +9,22 @@ const context = {
   logger: { info () { } }
 }
 
-const Http = require('../../../../lib/system/Http')
+const Bus = require('../../../../lib/system/Bus')
 
-describe('[unit] Http', () => {
+describe('[unit] Bus', () => {
   beforeEach(() => {
     mockery.disable()
     mockery.deregisterAll()
   })
   it('should initialized', async () => {
     try {
-      mockery.registerMock('hapi', {
-        server () { return { mockery: true } }
+      mockery.registerMock('rabbot', {
+        mockery: true,
+        async configure () { }
       })
       mockery.enable({ useCleanCache: true, warnOnReplace: false, warnOnUnregistered: false })
-      const http = new Http(context)
-      const instance = await http.getInstance()
+      const bus = new Bus(context)
+      const instance = await bus.getInstance()
       expect(instance.mockery).to.equal(true)
     } catch (e) {
       expect(e).to.equal(null)

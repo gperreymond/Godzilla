@@ -2,7 +2,9 @@
   "name": "Godzilla",
   "version": "1.0.0",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
+    "start:server": "$(npm bin)/nodemon --config nodemon.json examples",
     "test": "./tasks/test.sh"
   },
   "dependencies": {
