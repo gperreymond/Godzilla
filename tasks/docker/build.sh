@@ -1,6 +1,9 @@
 #!/bin/bash
+set -e
 
-docker build -t gperreymond/godzilla --build-arg COMMIT_SHA1=$1 .
+BUILD_DIR=${1:-.}
+
+docker build -t gperreymond/$CIRCLE_PROJECT_REPONAME --build-arg CIRCLE_SHA1=$CIRCLE_SHA1 $BUILD_DIR
 
 mkdir -p /tmp/images
-docker save --output /tmp/images/godzilla.tar gperreymond/godzilla
+docker save --output /tmp/images/${CIRCLE_PROJECT_REPONAME}.tar gperreymond/${CIRCLE_PROJECT_REPONAME}
