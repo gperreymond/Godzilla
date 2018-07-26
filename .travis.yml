@@ -21,10 +21,11 @@ jobs:
     - stage: docker
       if: branch = master
       services:
+        - docker
         - rabbitmq
       env:
-        - APP_RABBITMQ_USER: guest
-        - APP_RABBITMQ_PASS: guest
+        - APP_RABBITMQ_USER=guest
+        - APP_RABBITMQ_PASS=guest
       - script: ./tasks/docker/build.sh $TRAVIS_COMMIT
         name: Build the docker image
       - script: ./tasks/docker/test.sh
