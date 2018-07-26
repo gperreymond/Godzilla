@@ -1,7 +1,7 @@
 sudo: false
 
 jobs:
-  
+
   include:
 
     - stage: test
@@ -18,7 +18,14 @@ jobs:
         - yarn
       script: yarn test
 
-    - stage: build
+    - stage: docker
       if: branch = master
-      name: Build docker image
-      script: yarn docker:build $TRAVIS_COMMIT
+      services:
+        - rabbitmq
+      env:
+        - APP_RABBITMQ_USER: guest
+        - APP_RABBITMQ_PASS: guest
+      - script: ./tasks/docker/build.sh $TRAVIS_COMMIT
+        name: Build the docker image
+      - script: ./tasks/docker/test.sh
+        name: Tests specs the docker image
