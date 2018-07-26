@@ -1,7 +1,7 @@
 {
   "name": "Godzilla",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
     "start:server": "$(npm bin)/nodemon --config nodemon.json examples",
@@ -13,6 +13,7 @@
     "glob": "7.1.2",
     "glob-promise": "3.4.0",
     "hapi": "17.5.2",
+    "hoek": "5.0.3",
     "nconf": "0.10.0",
     "rabbot": "2.1.0",
     "rabbus": "0.8.2",
@@ -39,7 +40,7 @@
       "lib"
     ],
     "exclude": [
-      "test"
+      "lib/**/*.test.js"
     ],
     "reporter": [
       "lcov",

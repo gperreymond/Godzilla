@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+export APP_PORT=3333
 export NODE_ENV=test
 echo "Environment: $NODE_ENV"
 
