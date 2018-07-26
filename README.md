@@ -1,3 +1,3 @@
 ## Godzilla
 
-[![Build Status](https://travis-ci.org/gperreymond/Godzilla.svg?branch=master)](https://travis-ci.org/gperreymond/Godzilla)
+[![CircleCI](https://circleci.com/gh/gperreymond/Godzilla.svg?style=shield)](https://circleci.com/gh/gperreymond/Godzilla)

@@ -28,9 +28,7 @@ aliases:
           at: /tmp
       - run:
           name: Build docker image
-          command: |
-            cp tasks/docker/build.sh .
-            ./build.sh
+          command: ./tasks/docker/build.sh
       - persist_to_workspace:
           root: /tmp
           paths:
@@ -44,9 +42,7 @@ aliases:
       - setup_remote_docker
       - run:
           name: Test docker image
-          command: |
-            cp tasks/docker/test.sh .
-            ./test.sh
+          command: ./tasks/docker/test.sh
   - &step_push_image
     steps:
       - attach_workspace:
@@ -55,9 +51,8 @@ aliases:
       - setup_remote_docker
       - run:
           name: Push docker image
-          command: |
-            cp tasks/docker/push.sh .
-            ./push.sh
+          command: ./tasks/docker/push.sh
+
 jobs:
 
   # Tests
@@ -108,3 +103,6 @@ workflows:
       - docker_build:
           requires:
             - tests
+      - docker_test:
+          requires:
+            - docker_build
