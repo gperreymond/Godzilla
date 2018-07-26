@@ -31,4 +31,4 @@ jobs:
       name: Build, Tests the docker image
       script:
         - ./tasks/docker/build.sh $TRAVIS_COMMIT
-        - sudo ./tasks/docker/test.sh
+        - ./tasks/docker/test.sh
