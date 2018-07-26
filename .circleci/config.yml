@@ -6,6 +6,11 @@ aliases:
     docker:
       - image: circleci/node:8
 
+  - &use_env
+    environment:
+      ECS_APP: godzilla
+      ECS_CLUSTER: ecs-cluster-frontend
+
   - &use_docker
     docker:
       - image: gperreymond/docker-awscli
@@ -70,14 +75,17 @@ jobs:
   # Build docker image
   docker_build:
     <<: *use_docker
+    <<: *use_env
     <<: *step_build_image
   # Run tests specs on docker image
   docker_test:
     <<: *use_docker
+    <<: *use_env
     <<: *step_test_image
   # Push docker image
   docker_push:
     <<: *use_docker
+    <<: *use_env
     <<: *step_push_image
 
 workflows:
