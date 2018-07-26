@@ -17,11 +17,11 @@ jobs:
       name: Run units tests
       script: yarn test
 
-    - stage: docker
+    - stage: build
       branches:
         only:
         - master
-      sudo: yes
+      sudo: required
       services:
         - docker
         - rabbitmq

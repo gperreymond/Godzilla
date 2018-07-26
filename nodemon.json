@@ -1,6 +1,6 @@
 {
   "verbose": true,
-  "watch": ["lib", "server"],
+  "watch": ["config", "lib", "server"],
   "env": {
     "NODE_ENV": "development"
   }

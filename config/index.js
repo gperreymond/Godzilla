@@ -4,7 +4,7 @@ nconf.argv().env().file({ file: 'nconf.json' })
 
 let config = {
   env: process.env.NODE_ENV,
-  version: require('../../package.json').version,
+  version: require('../package.json').version,
   github: nconf.get('APP_GITHUB') || 'https://github.com/gperreymond/Godzilla/commit',
   commit: nconf.get('APP_LAST_COMMIT') || 'development',
   root: path.resolve(__dirname, '../..'),
