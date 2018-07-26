@@ -6,6 +6,6 @@ godzilla.listen()
     console.log('Godzilla is ready')
   })
   .catch(err => {
-    console.log(e)
+    console.log(err)
     process.exit(1)
   })

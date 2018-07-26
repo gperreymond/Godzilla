@@ -12,5 +12,12 @@ before_install:
 install:
   - yarn
 
-script:
-  - yarn test
+jobs:
+  include:
+    - stage: test
+      name: Tests unit
+      script: yarn test
+    - stage: build
+      if: branch = master
+      name: Build docker image
+      script: yarn build:docker $TRAVIS_COMMIT

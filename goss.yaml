@@ -1,0 +1,12 @@
+port:
+  tcp:3000:
+    listening: true
+    ip:
+    - 0.0.0.0
+http:
+  http://localhost:21974/hc:
+    status: 200
+    allow-insecure: false
+    no-follow-redirects: false
+    timeout: 5000
+    body: []

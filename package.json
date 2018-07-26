@@ -4,8 +4,9 @@
   "main": "lib/index.js",
   "license": "MIT",
   "scripts": {
-    "start:server": "$(npm bin)/nodemon --config nodemon.json examples",
-    "test": "./tasks/test.sh"
+    "start:server": "$(npm bin)/nodemon --config nodemon.json server",
+    "test": "./tasks/test.sh",
+    "docker:build": "./tasks/docker/build.sh"
   },
   "dependencies": {
     "@bennadel/circuit-breaker": "0.0.1",
@@ -36,22 +37,15 @@
     "functions": 90,
     "branches": 90,
     "report-dir": "coverage",
-    "include": [
-      "lib"
-    ],
+    "include": ["lib"],
     "exclude": [
+      "server",
       "lib/**/*.test.js"
     ],
-    "reporter": [
-      "lcov",
-      "text"
-    ]
+    "reporter": ["lcov", "text"]
   },
   "standard": {
-    "ignore": [
-      "examples",
-      "tasks"
-    ],
+    "ignore": [],
     "globals": [
       "describe",
       "it",
