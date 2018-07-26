@@ -4,7 +4,7 @@ jobs:
 
   include:
 
-    - stage: test
+    - stage: tests
 
       language: node_js
       node_js:
@@ -20,14 +20,16 @@ jobs:
       script: yarn test
 
     - stage: docker
-      if: branch = master
+      branches:
+        only:
+        - master
       services:
         - docker
         - rabbitmq
       env:
         - APP_RABBITMQ_USER=guest
         - APP_RABBITMQ_PASS=guest
-      name: Build the image
-      script: ./tasks/docker/build.sh $TRAVIS_COMMIT
-    - script: ./tasks/docker/test.sh
-      name: Run specs tests the image
+      name: Build, Tests the docker image
+      script:
+        - ./tasks/docker/build.sh $TRAVIS_COMMIT
+        - ./tasks/docker/test.sh
