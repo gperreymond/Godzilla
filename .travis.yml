@@ -5,6 +5,7 @@ jobs:
   include:
 
     - stage: test
+
       language: node_js
       node_js:
         - "8"
@@ -15,8 +16,8 @@ jobs:
         - export PATH="$HOME/.yarn/bin:$PATH"
       install:
         - yarn
-    - script: yarn test
-      name: Run unit tests
+      name: Run units tests
+      script: yarn test
 
     - stage: docker
       if: branch = master
@@ -26,7 +27,7 @@ jobs:
       env:
         - APP_RABBITMQ_USER=guest
         - APP_RABBITMQ_PASS=guest
-    - script: ./tasks/docker/build.sh $TRAVIS_COMMIT
-      name: Build the docker image
+      name: Build the image
+      script: ./tasks/docker/build.sh $TRAVIS_COMMIT
     - script: ./tasks/docker/test.sh
-      name: Tests specs the docker image
+      name: Run specs tests the image
