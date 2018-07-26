@@ -23,6 +23,7 @@ aliases:
   - &step_build_image
     steps:
       - checkout
+      - setup_remote_docker
       - attach_workspace:
           at: /tmp
       - run:
@@ -38,6 +39,7 @@ aliases:
       - attach_workspace:
           at: /tmp
       - checkout
+      - setup_remote_docker
       - run:
           name: Test docker image
           command: ./tasks/docker/test.sh
