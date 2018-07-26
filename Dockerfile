@@ -1,5 +1,5 @@
 FROM library/node:8-alpine
-MAINTAINER Gilles Perreymond <gperreymond@viadeoteam.com>
+MAINTAINER Gilles Perreymond <gperreymond@gmail.com>
 
 # Automatic arguments pass from the ci
 ARG COMMIT_SHA1
