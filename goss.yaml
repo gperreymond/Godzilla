@@ -1,4 +1,9 @@
 port:
+  tcp:5672:
+    listening: true
+    ip:
+    - 0.0.0.0
+port:
   tcp:21974:
     listening: true
     ip:
