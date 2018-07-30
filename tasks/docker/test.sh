@@ -2,7 +2,7 @@
 set -e
 
 echo "install goss"
-curl -fsSL https://goss.rocks/install | sudo sh
+curl -fsSL https://goss.rocks/install | sh
 sleep 2s
 
 echo "run the image"
