@@ -1,4 +1,4 @@
-const { Godzilla } = require('../lib')
+const { Godzilla } = require('./lib')
 
 const godzilla = new Godzilla()
 godzilla.listen()

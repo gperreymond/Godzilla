@@ -1,6 +1,6 @@
-const config = require('../../../../../config')
+const config = require('../../../config')
 
-const handler = async (request) => {
+module.exports = async (request) => {
   try {
     return {
       alive: true,
@@ -12,11 +12,4 @@ const handler = async (request) => {
   } catch (e) {
     return Promise.reject(e)
   }
-}
-
-module.exports.handler = handler
-module.exports.route = {
-  method: 'GET',
-  path: '/hc',
-  handler
 }
