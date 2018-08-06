@@ -1,8 +1,9 @@
 module.exports.breaker = {
   name: 'ServiceSystemHello',
-  timeout: 300, // if our function takes longer than 300ms, trigger a failure
-  errorThresholdPercentage: 20, // when 20% of requests fail, trip the circuit
-  resetTimeout: 5000 // after 5 seconds, try again.
+  timeout: 500, // if our function takes longer than 500ms, trigger a failure
+  errorThresholdPercentage: 50, // when 50% of requests fail, trip the circuit
+  resetTimeout: 3000, // after 3 seconds, try again.
+  maxFailures: 3
 }
 
 module.exports.fallback = () => {

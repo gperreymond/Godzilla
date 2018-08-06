@@ -103,6 +103,3 @@ workflows:
       - docker_build:
           requires:
             - tests
-      - docker_test:
-          requires:
-            - docker_build

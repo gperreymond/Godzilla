@@ -1,17 +1,21 @@
-function sleep (delay) {
-  var start = new Date().getTime()
-  while (new Date().getTime() < start + delay);
+function timedFunction (ms) {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      resolve({world: ms})
+    }, ms)
+    if (typeof timer.unref === 'function') {
+      timer.unref()
+    }
+  })
 }
 
-module.exports = async (request) => {
+module.exports = async (request, h) => {
   try {
-    const action = Math.random()
-    const exectime = Math.floor(Math.random() * (2000 - 100 + 1)) + 100
-    if (action <= 0.1) { throw new Error('random failure') }
-    sleep(exectime)
-    return { world: exectime }
+    const failure = Math.random()
+    const exectime = Math.floor(Math.random() * (520 - 100 + 1)) + 100
+    if (failure <= 0.05) { throw new Error('random failure') }
+    return timedFunction(exectime)
   } catch (e) {
-    console.log(e)
     return Promise.reject(e)
   }
 }
